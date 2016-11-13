@@ -12,7 +12,8 @@ import { HeroesComponent } from './heroes/heroes.component';
 import { HeroService }         from './hero.service';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { HeroSearchComponent } from './hero-search/hero-search.component';
-
+import { LoginComponent } from './login/login.component';
+import { AuthServiceService } from './auth-service.service';
 
 
 @NgModule({
@@ -22,6 +23,7 @@ import { HeroSearchComponent } from './hero-search/hero-search.component';
     HeroesComponent,
     DashboardComponent,
     HeroSearchComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -31,7 +33,7 @@ import { HeroSearchComponent } from './hero-search/hero-search.component';
     MaterialModule.forRoot(),
     AppRoutingModule
   ],
-  providers: [HeroService],
+  providers: [HeroService, AuthServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

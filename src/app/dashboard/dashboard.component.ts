@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Hero } from '../hero';
 import { HeroService } from '../hero.service';
+import { AuthServiceService } from '../auth-service.service';
+import {Observable} from 'rxjs/Observable';
 
 @Component({
   selector: 'app-dashboard',
@@ -14,7 +16,8 @@ export class DashboardComponent implements OnInit {
 
   constructor(
   	private heroService: HeroService,
-  	private router: Router
+  	private router: Router,
+    public auth: AuthServiceService
   	){}
 
   ngOnInit(): void {
@@ -28,4 +31,12 @@ export class DashboardComponent implements OnInit {
   	let link = ['/detail', hero.id];
   	this.router.navigate(link);
   }
+
+  onLogout() {
+    this.auth.logout()
+      .subscribe(
+        () => this.router.navigate(['login']),
+      );
+  }
 }
+
