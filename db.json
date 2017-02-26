@@ -5,7 +5,7 @@
       "name": "Batman"
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "Captain America"
     },
     {
@@ -17,7 +17,7 @@
       "id": 4
     },
     {
-      "name": "Arrow",
+      "name": "Marvel",
       "id": 5
     }
   ]

@@ -22,12 +22,12 @@ export class HeroSearchComponent implements OnInit {
    //new used instead of DI, TODO..
 
    //Subject is a producer of an observable event stream
-   private searchTerms = new Subject<string>();
+   private searchTerms = new Subject<any>();
 
   constructor(private heroSearchService: HeroSearchService,
   	private router: Router) { }
 
-  search(term: string): void {
+  search(term: any): void {
   	this.searchTerms.next(term);
   }
 
