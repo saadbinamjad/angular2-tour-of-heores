@@ -10,7 +10,7 @@ export class HeroSearchService {
 
   constructor(private http: Http) { }
 
-  search(term: string) : Observable<Hero>{
+  search(term: any) : Observable<Hero[]>{
   
   return this.http
             .get(`http://localhost:3000/heroes/?name_like=${term}`)
